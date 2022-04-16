@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{{url_for('static', filename = 'css/quiz.css')}}'>
+    <!-- font links 1  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Quicksand&display=swap" rel="stylesheet">
+    <!-- font link 2 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,200&family=Inter:wght@200&family=Quicksand&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <h2 class="brand"><a class="home-link" href="/">So How Weeb Are You?</a></h2>
+    <div class="nav-bar">
+        <nav>
+            <ul class="nav-items">
+                <li><a href="/all-quizes">Anime Quizzes</a></li>
+                <li><a href="/anime-news">Anime News</a></li>
+                <li><a href="/art-submissions">Art Submission</a></li>
+                <li><a href="/community">Community</a></li>
+                <li><a href="/about-us">About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="nav-bar-title"><nav class="header-font">{{anime_info[1]}} Quiz!</nav></div>
+    <img class="quiz-anime-image" src="static/images/{{anime_info[3]}}" alt="naruto-image">
+    <!-- <span class="int-iteration"><p>{{anime_it}}</p></span> -->
+    <div class="iteration-int"></div>
+    
+    <!-- form that creates multiple choice and confirms  -->
+    <form class="questions-form header-font" a="juan" action="/check_answer/{{anime_questions[0][1]}}" method="POST">
+        {% if question_num < anime_questions|length %}
+        <input class="correct-answer" type="hidden" value="{{anime_questions[question_num][2]}}" name="correct-answer">
+        <input class="anime-name" type="hidden" name="anime-name" value="{{anime_info[1]}}">
+        <input class="anime-id" type="hidden" name="anime-id" value="{{anime_info[0]}}">
+        <p>Question {{anime_questions[question_num][0]}} : {{anime_questions[question_num][1]}}</p>
+        {% for a in shuffled_list[question_num] %}
+        <div>
+            <input type="radio" id="{{a}}" name="choices" value="{{a}}">
+            <label for="{{a}}">{{a}}</label>
+        </div>
+        <br>
+        {% endfor %}
+        <button class="submit-btn">Submit Answer</button>
+        {% else %}
+        <div>
+            <div><h2>Check How You Did!</h2></div>
+            <!-- display if correct -->
+            <div class="tenor-gif-embed gif-correct hidden" data-postid="14298094" data-share-method="host"data-aspect-ratio="1.78571" data-width="100%"><a href="https://tenor.com/view/sailor-moon-suit-old-man-peace-sign-sailor-scout-anime-gif-14298094">Sailor Moon Suit Old Man GIF</a>from <a href="https://tenor.com/search/sailor+moon+suit-gifs">Sailor Moon Suit GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+            <!-- display if incorrect -->
+            <div class="tenor-gif-embed gif-incorrect hidden" data-postid="16521938" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/jealous-punching-punch-anime-gif-16521938">Jealous Punching GIF</a>from <a href="https://tenor.com/search/jealous-gifs">Jealous GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        </div>
+        {% endif %}
+    </form>
+    <div class="quiz-stats">
+        <h2 class="header-font">Test Score</h2>
+        {% for i in stats %}
+        <p class="iter-grade iteration-{{loop.index}}">{{loop.index}} : {{i}}</p>
+        {% endfor %}
+    </div>
+    <script src='static/js/quiz.js'></script>
+</body>
+</html>

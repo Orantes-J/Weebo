@@ -1,0 +1,4 @@
+question#, question, answers, choice1, choice2, choice3, choice4
+1, Where was Gol D. Roger born?, East Blue, Samba Island, Hand Island, Dock Island, Madatascar
+2, Who is Luffy's first main opponent?, Alvida, Arlong, Buggy, Crocodile, Blackbeard
+3, Besides finding the perfect woman what is Sanji's dream?, To find the All Blue, Be the best chef in all the sea's, Beat Zoro in a fight, To be a better Pirate king than Luffy, None of the above

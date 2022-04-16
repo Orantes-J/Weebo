@@ -1,0 +1,4 @@
+question#, question, answers, choice1, choice2, choice3, choice4
+1, How many answers did Naruto answer correctly in the first phase of the chunin exam?, Zero, Two, Four, Ten, None of the above
+2, In one of Haku's flashbacks it shows him and Zabuza standing together looking down at a village. What does Haku say in this flashback?, 'Think as me as but a weapon, to be kept at your side and used as you see fit.', 'When a person... has something important they want to protect... that's when they can become truly strong.', 'Mister... you have the same eyes as me...', 'Don't touch Zabuza with your dirty hands...', 'This bridge is where our dreams are tied together. The place where we fight. Me, for my dreams. You, for your dreams. Please don't resent me.'
+3, Konohamaru is related to which Kazekage?, None, Garra, Rasa, Hiruzen Sarutobi

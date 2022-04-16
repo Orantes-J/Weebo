@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Art Submissions</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{{url_for('static', filename='css/submissions.css')}}'>
+    <!-- font links 1  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Quicksand&display=swap" rel="stylesheet">
+    <!-- font link 2 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,200&family=Inter:wght@200&family=Quicksand&display=swap" rel="stylesheet">
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+</head>
+<body>
+    <h2 class="brand"><a class="home-link" href="/">So How Weeb Are You?</a></h2>
+    <div class="nav-bar">
+        <nav>
+            <ul class="nav-items">
+                <li><a href="/all-quizes">Anime Quizzes</a></li>
+                <li><a href="/anime-news">Anime News</a></li>
+                <li><a href="/art-submissions">Art Submission</a></li>
+                <li><a href="/community">Community</a></li>
+                <li><a href="/about-us">About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="nav-bar-title"><nav class="header-font">Art Submissions</nav></div>
+    <div class="art-form">
+        <form action="submit-art" enctype="multipart/form-data" method="POST">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="upload-h">Upload Here</th>
+                    </tr>
+                </thead>
+                    <tbody class="brand">
+                        <tr>
+                            <td><label for="caption">Caption: </label></td>
+                            <td><input name="caption" id="caption" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="name">Artist Name: </label></td>
+                            <td><input name="name" id="name" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="link">Main Social Media Link: </label></td>
+                            <td><input name="link" id="link" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="file">Art File: </label></td>
+                            <td><input type="file" name="file"></td>
+                        </tr>
+                    <tfoot>
+                        <tr>
+                            <td><input type="submit" class="submit-btn"></td>
+                        </tr>
+                    </tfoot>
+                    </tbody>
+            </table>
+        </form>
+    </div>
+    <div class="art-btns">
+        <button class="galleria header-font" type="button">Display Galleria</button>
+        <button class="hide-galleria hidden header-font" type="button">Hide Galleria</button>
+    </div>
+    <div class="art-galleria-images">
+        {% for i in arts %}
+            <img class="art-images" data-art="{{i[1]}}" src="/static/images/{{i[4]}}" height="150" width="150">
+            <div class="art-modal-container header-font" id="modal{{loop.index}}">
+                <i class="fas fa-times close-modal-btn"></i>
+                <div data-caption="{{i[1]}}" class="art-modal-artist-caption"><span>'{{i[1]}}'</span></div>
+                <div class="art-modal-art-info">
+                    <a class="art-modal-artist-link" href="{{i[3]}}">Social Link</a> <br>
+                    <span class="art-modal-artist-date">{{i[5]}}</span>
+                </div>
+            </div>
+        {% endfor %}
+        <br>
+        <i class="fas fa-chevron-up return--top"></i>
+    </div>
+    <script src='static/js/main.js'></script>
+</body>
+</html>

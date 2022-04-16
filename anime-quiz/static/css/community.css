@@ -1,0 +1,57 @@
+body{
+    background-color: #BAABDA;
+    padding: 20px;
+}
+
+/* DEFAULT FONT 1 */
+
+.header-font{
+    text-decoration: none;
+    color: black;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif
+}
+
+/* DEFAULT FONT FOR BRAND */
+.brand, .review-container{
+    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* NAVBAR SETTING */
+.nav-bar{
+    box-shadow: 0px 5px 10px gray;
+    margin-bottom: 5pc;
+}
+.nav-items{
+    display: flex;
+    border: transparent;
+    justify-content: space-evenly;
+}
+.nav-items li{
+    list-style: none;
+    text-decoration: none;
+}
+li a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+.home-link{
+    text-decoration: none;
+    color: black;
+}
+.nav-bar-title{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 25%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid;
+}

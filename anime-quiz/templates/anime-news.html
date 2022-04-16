@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Weebo News</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{{url_for('static', filename="css/anime-news.css")}}'>
+    <!-- font links 1  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Quicksand&display=swap" rel="stylesheet">
+    <!-- font link 2 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,200&family=Inter:wght@200&family=Quicksand&display=swap" rel="stylesheet">
+    <!-- font-awesome-cdn -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+    <h2 class="brand"><a class="home-link" href="/">So How Weeb Are You?</a></h2>
+    <div class="nav-bar">
+        <nav>
+            <ul class="nav-items">
+                <li><a href="/all-quizes">Anime Quizzes</a></li>
+                <li><a href="/anime-news">Anime News</a></li>
+                <li><a href="/art-submissions">Art Submission</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="nav-bar-title"><nav class="header-font">Anime News</nav></div>
+    <div class="main-body">
+        <div class="anime-news-container">
+            {% for i in all_news %}
+            <!-- <i class="far fa-user user-image"></i> -->
+            <img class="ind-new-image" src="static/images/tanjiro-img.jpg" alt="tanjiro-anime-image">
+            <div class="ind-new-container">
+                <p class="news-p header-font">{{i[1]}}<br><a href="{{i[3]}}">{{i[3]}}</a></p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="anime-undecided-container">
+            <!-- <div><h2 class="header-font quick-reads">Quick Reads</h2></div> -->
+            <img src="" alt="">
+            <img src="" alt="">
+        </div>
+    </div>
+    <script src='main.js'></script>
+</body>
+</html>

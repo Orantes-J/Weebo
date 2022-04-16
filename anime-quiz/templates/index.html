@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>How Weeb Are You?</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{{url_for('static', filename='css/index.css')}}'>
+    <!-- font links 1  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Quicksand&display=swap" rel="stylesheet">
+    <!-- font link 2 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,200&family=Inter:wght@200&family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h2 class="brand"><a class="home-link" href="/">So How Weeb Are You?</a></h2>
+    <div class="nav-bar">
+        <nav>
+            <ul class="nav-items">
+                <li><a href="/all-quizes">Anime Quizzes</a></li>
+                <li><a href="/anime-news">Anime News</a></li>
+                <li><a href="/art-submissions">Art Submission</a></li>
+                <li><a href="/community">Community</a></li>
+                <li><a href="/about-us">About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+    {% if session['user_id']  %}
+    <h2>{{session}}</h2>
+    <div class="u-s-i-k-p">
+        <p>{{context}}</p>
+        <p>{{context['user'][0][0]}}</p>
+        <p>{{context['user'][0][1]}}</p>
+        <p>{{context['user'][0][4]}}</p>
+        <img src="static/images/{{context['user'][0][5]}}" alt="image-of-{{context['user'][0][1]}}" width="100px" height="100px">
+        <a href="/delete_session">Logout</a>
+    </div>
+    {% else %}
+        <p>emtpy</p>
+        <a class="login-a"  href="/login">Login</a>
+        <a class="signup-a" href="/signup">Sign-Up</a>
+    {% endif %}
+    <div class="nav-bar-title"><nav class="header-font">Your Home</nav></div>
+    <div class="anime-quiz-container">
+        <div class="ex" >
+            <p class="prompt">Take the quiz on the anime related questions we have selected below - <span><em>Our questions are based on reseach from various sources to see how much of a weeb you are.</em></span></p>
+            <img class="banner" src="{{url_for('static', filename='images/anime-quiz-intro-pic.jpg')}}" alt="anime-banner">
+        </div>
+        <div class="anime-quizes">
+            <h2 class="caption">Anime Quizes</h2>
+            {% for i in lot %}
+            {% if loop.index <= 2 %}
+            <p class="anime-name" >{{i[1]}}</p>
+            <span class="iteration-int">{{loop.index}}</span>
+            <div class="loop-iteration"></div>
+            <img class="anime-image" src="static/images/{{i[3]}}" alt="{{i[1]}} anime">
+            <br>
+            <a class="quiz-hyperlink" href="{{url_for('quiz', name=i[1], id=loop.index)}}">Take This Quiz</a>
+            {% elif loop.index == 3  %}
+            <br>
+            <a class="quiz-hyperlink" href="/all-quizes">Check out all our other quizes here!</a>
+            {% endif %}
+            {% endfor %}
+            <div>
+                <i class="fas fa-arrow-down"></i>
+            </div>
+        </div>
+    </div>
+    <!-- MOST RECENT  -->
+    <p class="nav-bar-title ">Most Recents Art Submissions </p>
+    <div class="website-news">
+        <img src="static/images/anime-wall-art-img2.png" class="wall-art" alt="anime-girl-peek-a-boo" height="150px" width="150px">
+        {% for art in arts|reverse %}
+            {% if loop.index <= 3 %}
+                <ul class="header-font arts">
+                    <li>"{{art[1]}}"</li>
+                    <li><img class="submissions {{art[0]}}-{{art[2]}}" src="static/images/{{art[4]}}" height="100px" width="100px" alt="{{art[1]}}"></li>
+                    <li>By: {{art[2]}}</li>
+                    <li><a class="artist-link" href="{{art[3]}}">{{art[3]}}</a></li>
+                </ul>
+            {% endif %}
+        {% endfor %}
+        <img src="static/images/anime-wall-art-img3.png" class="wall-art" alt="anime-girl-peek-a-boo" height="150px" width="150px">
+    </div>
+    <div class="space-container"></div>
+    <div class="user-reviews-container">
+        <div class="nav-bar-title"><nav class="header-font">Reviews</nav></div>
+        {% for i in all_reviews %}
+        <div class="{{i[0]}}-{{loop.index}} user-review-div fade">
+            <p class="user-name header-font">{{i[0]}} <em>"Rating: {{i[1]}}"</em></p>
+            <p class="user-review header-font"><em>"{{i[2]}}"</em></p>
+        </div>
+        {% endfor %}
+        <a class="prev prev-pos" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next next-pos" onclick="plusSlides(1)">&#10095;</a>
+        <div style="text-align: center;">
+            {% for a in all_reviews %}
+                <span class="dot" onclick="currentSlide({{loop.index}})"></span>
+            {% endfor %}
+            </div>
+    </div>
+    <div class="space-container"></div>
+    <div class="footer-div">
+        <footer>
+            <ul>
+                <li class="first-li">Support</li>
+                <li></li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, labore. Sint obcaecati tempore corporis. Ipsum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, labore. Sint obcaecati tempore corporis. Ipsum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, labore. Sint obcaecati tempore corporis. Ipsum.</li>
+            </ul>
+            <ul>
+                <li class="first-li">Report A Problem</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, labore. Sint obcaecati tempore corporis. Ipsum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, labore. Sint obcaecati tempore corporis. Ipsum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, labore. Sint obcaecati tempore corporis. Ipsum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, labore. Sint obcaecati tempore corporis. Ipsum.</li>
+            </ul>
+            <ul>
+                <li class="first-li">How Can I Contribute?</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, labore. Sint obcaecati tempore corporis. Ipsum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, labore. Sint obcaecati tempore corporis. Ipsum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, labore. Sint obcaecati tempore corporis. Ipsum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, labore. Sint obcaecati tempore corporis. Ipsum.</li>
+            </ul>
+        </footer>
+    </div>
+    <script src='static/js/main.js'></script>
+</body>
+</html>

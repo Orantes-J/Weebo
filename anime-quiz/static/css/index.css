@@ -1,0 +1,275 @@
+body{
+    background-color: #BAABDA;
+    padding: 20px;
+    max-height: fit-content;
+}
+
+.header-font{
+    text-decoration: none;
+    color: black;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif
+}
+.ex{
+    width: 730px;
+}
+
+h2, p{
+    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+.login-a{
+    color: #1572A1; 
+    text-decoration: none ;
+}
+.signup-a{
+    color: #1572A1;
+    text-decoration: none ;
+}
+.caption{
+    border-width: thin 5px;
+    border-bottom: white solid 3px;
+    padding-bottom: 3px;
+}
+.banner{
+    width: inherit;
+}
+
+/* Nav Bar Items */
+.nav-bar{
+    box-shadow: 0px 5px 10px gray;
+    margin-bottom: 5pc;
+}
+.nav-items{
+    display: flex;
+    border: transparent;
+    justify-content: space-evenly;
+}
+.nav-items li{
+    list-style: none;
+    text-decoration: none;
+}
+li a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* anime quiz */
+.anime-quizes {
+    position: relative;
+    left: 10pc;
+    bottom: 1pc;
+    text-align: center;
+}
+.anime-quiz-container{
+    display: grid;
+    grid-template-columns: 50% 37%;
+}
+.anime-image{
+    border-radius: 10px;
+    height: 123px;
+    width: 200px;
+}
+.quiz-hyperlink{
+    text-decoration: none;
+    color: black;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+.quiz-hyperlink:hover{
+    text-decoration: underline;
+}
+/* anime news */
+
+.anime-news{
+    display: inline-block;
+    position: relative;
+    left: 48pc;
+    bottom: 889px;
+    text-align: center;
+}
+
+.home-link{
+    text-decoration: none;
+    color: black;
+}
+.nav-bar-title{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 25%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid;
+    margin-bottom: 3pc;
+}
+
+.loop-iteration{
+    display: inline-block;
+    border: 3px solid white;
+    height: 20px;
+    width: 20px;
+    left: 18px;
+    bottom: 104px;
+    position: relative;
+    background-color: black;
+    border-radius: 13px;
+}
+
+.iteration-int{
+    color: #BAABDA;
+    position: relative;
+    bottom: 7pc;
+    left: 39px;
+    z-index: 10;
+}
+
+/* EXTRA INFORMATION  */
+
+.extra-info-container-header{
+    /* width: 50%;
+    display: flex;
+    justify-content: center; */
+    text-align: center;
+    position: relative;
+    bottom: 27pc;
+    left: 25%;
+    width: 50%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid;
+    margin-bottom: 3pc;
+}
+
+.extra-info{
+    display: grid;
+    grid-template-columns: 47% 47%;
+    column-gap: 3pc;
+    position: relative;
+    bottom: 27pc;
+}
+
+/* HIDING REVIEWS */
+
+/* .user-reviews-container{
+
+} */
+
+.user-name{
+    text-align: center;
+}
+.user-review{
+    text-align: center;
+}
+.user-review-div{
+    display: none;
+    position: relative;
+    left: 21pc;
+    width: 43%;
+}
+
+/* NEXT AND PREVIOUS BUTTONS */
+.prev-pos{
+    left: 19pc;
+}
+
+a.next.next-pos{
+    right: 19pc;
+}
+
+.prev, .next{
+    cursor: pointer;
+    position: absolute;
+    top: 73pc;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade{
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+@keyframes fade{
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+/* WALL ART */
+
+.wall-art{
+    position: relative;
+    top: 30px;
+}
+
+/* ART SUBMISSION SETTINGS  */
+
+.website-news{
+    display: flex;
+    justify-content: center;
+}
+
+.arts-caption{
+    text-align: center;
+}
+
+.arts li{
+    list-style: none;
+    text-align: center;
+    margin: 5px;
+}
+
+.artist-link:hover{
+    color: blue;
+}
+
+.submissions{
+    width: 100px;
+}
+
+/* FOOTER SETTINGS */
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+footer ul{
+    list-style: none;
+}
+
+.footer-div{
+    background-color: #3E497A;
+}
+
+.space-container{
+    height: 3pc;
+}
+
+.first-li{
+    text-align: center;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Sign Up!</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{{url_for('static', filename='css/signup.css')}}">
+    <!-- font links 1  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Quicksand&display=swap" rel="stylesheet">
+    <!-- font link 2 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,200&family=Inter:wght@200&family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h2 class="brand"><a class="home-link" href="/">So How Weeb Are You?</a></h2>
+    <div class="nav-bar">
+        <nav>
+            <ul class="nav-items">
+                <li><a href="/all-quizes">Anime Quizzes</a></li>
+                <li><a href="/anime-news">Anime News</a></li>
+                <li><a href="/art-submissions">Art Submission</a></li>
+                <li><a href="/community">Community</a></li>
+                <li><a href="/about-us">About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="nav-bar-title"><nav class="header-font">Your Home</nav></div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="notification">
+        {{ messages[0] }}. Go to <a href="{{ url_for('login') }}">login page</a>.
+    </div>
+    {% endif %}
+    {% endwith %}
+    <h3 class="header-font">Sign Up</h3>
+    <!-- <div class="form-container">
+        <div>
+            <form action="/signup" method="POST">
+                <div>
+                    <input type="email" name="email" id="email" placeholder="Your Email" autofocus="">
+                </div>
+                <div>
+                    <input type="text" name="name" placeholder="Name">
+                </div>
+                <div>
+                    <input type="password" name="password" id="password" placeholder="Your Password">
+                </div>
+                <div>
+                    <input type="text" name="username" id="username" placeholder="Your Username">
+                </div>
+                <button class="checkbox-btn">Sign Up</button>
+            </form>
+        </div>
+    </div> -->
+    <div class="form-container">
+        <form action="/signup" method="POST">
+            <table>
+                    <tbody class="brand">
+                        <tr>
+                            <td><label for="caption">Email</label></td>
+                            <td><input name="email" id="email" type="email" autocomplete="off" autofocus></td>
+                        </tr>
+                        <tr>
+                            <td><label for="name">Name</label></td>
+                            <td><input name="name" id="name" autocomplete="off" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="password">Password</label></td>
+                            <td><input name="password" id="password" autocomplete="off" type="password"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="file">Username</label></td>
+                            <td><input type="text" id="username" autocomplete="off" name="username"></td>
+                        </tr>
+                    <tfoot>
+                        <tr>
+                            <td class="submit-td"><input type="submit" class="submit-btn"></td>
+                        </tr>
+                    </tfoot>
+                    </tbody>
+            </table>
+        </form>
+    </div>
+    <script src='main.js'></script>
+</body>
+</html>

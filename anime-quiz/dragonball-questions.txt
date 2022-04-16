@@ -1,0 +1,4 @@
+question#, question, answers, choice1, choice2, choice3, choice4
+1, How can Goku reach the planet of King Kai?, Walk along the Snake Way, West City, Penguin Village, Satan City, East City
+2, What is the name of the first Super Saiyan God?, Yamoshi, Broly, Vegeta, Goku, Nappa
+3, The first time when Goku becomes a Super Saiyan happens in which planet?, Planet Namek, Planet Earth, Planet Arlia, Planet Sadala, Heaven

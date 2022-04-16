@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>More Quizzes</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{{url_for('static', filename = 'css/quizes.css')}}'>
+    <!-- font links 1  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Quicksand&display=swap" rel="stylesheet">
+    <!-- font link 2 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,200&family=Inter:wght@200&family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h2 class="brand"><a class="home-link" href="/">So How Weeb Are You?</a></h2>
+    <div class="nav-bar">
+        <nav>
+            <ul class="nav-items">
+                <li><a href="/all-quizes">Anime Quizzes</a></li>
+                <li><a href="/anime-news">Anime News</a></li>
+                <li><a href="/art-submissions">Art Submission</a></li>
+                <li><a href="/community">Community</a></li>
+                <li><a href="/about-us">About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="nav-bar-title"><nav class="header-font">Quizzes</nav></div> 
+    <div class="list-of-quizes">
+        {% for i in all_quizes %}
+        <img class="quiz-image" src="static/images/{{i[3]}}" alt="Image of {{i[0]}}">
+        <div class="blur-block">
+            <span><a href="{{url_for('quiz', name=i.name, id=loop.index )}}" class="anime-title">{{i[1]}}</a></span>
+        </div>
+        {% endfor %}
+    </div>
+    <div>
+    </div>
+    </div>
+    <div class="review-container">
+        <h2 class="review-h">Leave A Review</h2>
+        <form class="review-form" action="/all-quizes" method="POST">
+            {{form.csrf_token}}
+            <p>{{form.name.label}} <br> {{form.name(size=30)}}</p>
+            <p>{{form.rating.label}}  <br> {{form.rating(size=30)}}</p>
+            <p>{{form.user_review.label}} <br> {{form.user_review(size=30)}}</p>
+            <button class="form-button" type="submit">Submit Review!</button>
+        </form>
+    </div>
+    <script src='static/js/main.js'></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+body{
+    background-color: #BAABDA;
+    padding: 20px;
+}
+
+.quiz-anime-image{
+    border-radius: 10%;
+    height: 280px;
+    width: 420px;
+    margin: 0pc 30%;
+    margin-top: 20px;
+}
+
+.questions-form{
+    max-width: 300px;
+    display: inline-block;
+    position: relative;
+    bottom: 19pc;
+}
+
+/* DEFAULT FONT 1 */
+
+.header-font{
+    text-decoration: none;
+    color: black;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif
+}
+
+/* DEFAULT FONT FOR BRAND */
+.brand, .review-container{
+    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* NAVBAR SETTING */
+.nav-bar{
+    box-shadow: 0px 5px 10px gray;
+    margin-bottom: 5pc;
+}
+.nav-items{
+    display: flex;
+    border: transparent;
+    justify-content: space-evenly;
+}
+.nav-items li{
+    list-style: none;
+    text-decoration: none;
+}
+li a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+.home-link{
+    text-decoration: none;
+    color: black;
+}
+.nav-bar-title{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 25%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid;
+}
+
+.iteration-int{
+    color: red;
+    background-color: black;
+    border: 3px solid white;
+    display: inline-block;
+    width: 37px;
+    height: 37px;
+    border-radius: 21px;
+    position: relative;
+    bottom: 33pc;
+    left: 20pc;
+}
+
+.int-iteration{
+    display: inline-block;
+    position: absolute;
+    left: 365px;
+    color: white;
+    top: 15pc;
+    z-index: 10;
+}
+
+.quiz-stats{
+    display: inline-block;
+    position: absolute;
+    top: 39%;
+    right: 7pc;
+}
+
+.submit-btn{
+    border: none;
+    background-color: transparent;
+    position: relative;
+    left: 5pc;
+}
+.submit-btn:hover{
+    text-decoration: underline;
+}
+
+.correct-answer{
+    display: none;
+}
+
+.hidden{
+    display: none;
+}

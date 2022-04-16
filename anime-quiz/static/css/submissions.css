@@ -1,0 +1,166 @@
+body{
+    background-color: #BAABDA;;
+    padding: 20px;
+}
+
+/* DEFAULT FONT 1 */
+
+.header-font{
+    text-decoration: none;
+    color: black;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif
+}
+
+/* DEFAULT FONT FOR BRAND */
+.brand, .review-container, .upload-h{
+    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* NAVBAR SETTING */
+.nav-bar{
+    box-shadow: 0px 5px 10px gray;
+    margin-bottom: 5pc;
+}
+.nav-items{
+    display: flex;
+    border: transparent;
+    justify-content: space-evenly;
+}
+.nav-items li{
+    list-style: none;
+    text-decoration: none;
+}
+li a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+/* ART GALLERIA DIV */
+.art-galleria-images{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+/* DIV TITLE */
+.nav-bar-title{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 25%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid;
+}
+
+table{
+    border-spacing: 2pc;
+}
+.art-form{
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    width: 50%;
+    border-radius: 10px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 25%;
+    text-align: center;
+}
+tr th{
+    position: relative;
+    left: 8pc;
+    margin: 5pc;
+}
+td input[type="file"]{
+    position: relative;
+    left: 42px;
+}
+
+tfoot button{
+    position: relative;
+    left: 8pc;
+}
+
+.home-link{
+    text-decoration: none;
+    color: black;
+}
+
+.submit-btn{
+    border: none;
+    background-color: transparent;
+}
+.submit-btn:hover{
+    text-decoration: underline;
+}
+
+.hidden{
+    display: none;
+}
+
+.art-btns{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+.art-btns button{
+    background-color: transparent;
+    font-size: 20px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid black;
+    width: 52%;
+}
+
+.grid-images-template{
+    display: grid;
+    justify-content: center;
+    grid-template-columns:  15% 15% 15% 15% 15%
+}
+.art-images{
+    margin: 5px;
+}
+
+.return--top{
+    position: absolute;
+    left: 39pc;
+    bottom: -17pc;
+}
+
+/* ART-MODAL SETTINGS */
+.art-modal-container{
+    /* background-color: #BC8CF2; */
+    opacity: 1;
+    backdrop-filter: blur(4px);
+    text-align: center;
+    display: none;
+    position: absolute;
+    top: 44pc;
+    right: 40pc;
+    min-width: 150px;
+    height: max-content;
+}
+span{
+    color: black;
+}
+
+.reveal{
+    display: table;
+    position: absolute;
+    border-radius: 15px;
+}
+i.fas.fa-chevron-up.return--top{
+    position: relative;
+    top: 1pc;
+    left: 28pc;
+}
+

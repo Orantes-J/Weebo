@@ -1,0 +1,4 @@
+question#, question, answers, choice1, choice2, choice3, choice4
+1, I like to drink sake. I loves shopping when I was in the Karakura Town. Who am I?, Matsumoto Rangiku, Nanao Ise, Kurotsuchi Nemu, Kuchiki Rukia, Kurumadani Zennosuke
+2, Who is the only squad captain who can not release his zanpaku-to?, Kenpachi Zaraki, Makizo Aramaki, Goteitaishi, Yumichika Ayasegawa, Ikkaku Madarame
+3, Ichigo receives training in fighting from Urahara. Who runs what kind of establishment in Ichigo's town?, Candy store, Laundry mat, Ramen Shop, Repair Shop, He does not own a establishment.

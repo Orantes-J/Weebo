@@ -1,0 +1,170 @@
+body{
+    background-color: #BAABDA;
+    padding: 20px;
+}
+/* VARIABLES */
+
+:root{
+    --text-align: center;
+}
+
+/* DEFAULT FONT 1 */
+
+.header-font{
+    text-decoration: none;
+    color: black;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif
+}
+
+/* DEFAULT FONT FOR BRAND */
+.brand, .review-container{
+    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* NAVBAR SETTING */
+.nav-bar{
+    box-shadow: 0px 5px 10px gray;
+    margin-bottom: 5pc;
+}
+.nav-items{
+    display: flex;
+    border: transparent;
+    justify-content: space-evenly;
+}
+.nav-items li{
+    list-style: none;
+    text-decoration: none;
+}
+li a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+.home-link{
+    text-decoration: none;
+    color: black;
+}
+
+/* LIST OF QUIZZES SETTINGS */
+.list-of-quizes{
+    display: grid;
+    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px;
+    column-gap: 3pc;
+    row-gap: 3pc;
+    position: relative;
+    left: 30px;
+    width: 900px;
+    margin-bottom: 5pc;
+}
+.quiz-image{
+    height: 10pc;
+    width: 10pc;
+    border-radius: 10%;
+    backdrop-filter: blur(2px);
+    transition: 1s;
+}
+.anime-title{
+    display: inline-block;
+    width: 147px;
+    position: relative;
+    top: 5px;
+    right: 22px;
+    margin: 10px;
+    font-family: 'Quicksand', sans-serif;
+    color: black;
+    text-decoration: underline;
+    text-align: center;
+}
+
+/* ZOOM HOVER FOR IMAGES */
+
+.quiz-image:hover{
+    transform: scale(1.2);
+}
+
+/* REVIEWS FORM SETTINGS */
+.hidden{
+    display: none;
+}
+.review-container{
+    position: absolute;
+    right: 5pc;
+    top: 14pc;
+    text-align: center;
+}
+.review-form input, textarea{
+    border: 1px solid black;
+    background-color: transparent;
+    margin-bottom: 2px;
+    border-radius: 10px;
+    text-align: center;
+}
+#user_review{
+    height: 5pc;
+    width: 20pc;
+}
+.form-button{
+    border-radius: 10px;
+    padding: 10px;
+    background-color: transparent;
+}
+.form-button:hover{
+    background-color: #1DA1F2;
+}
+.blur-block{
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    position: relative;
+    right: 82px;
+    width: 247%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+.quiz-header{
+    position: relative;
+    display: inline-block;
+    left: 10pc;
+}
+.review-h{
+    position: relative;
+    display: inline-block;
+    right: 3px;
+    min-width: 326px;
+}
+.review-h:hover{
+    cursor: pointer;
+}
+.review-h::after{
+    content: '->';
+}
+.nav-bar-title{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 2pc;
+    left: 25%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid;
+}
+
+/* USER REVIEWS */
+.user-reviews-container{
+    display: grid;
+    grid-template-columns: 40%;
+}
+.user-name{
+    text-align: center;
+    text-decoration: underline;
+}
+.user-review{
+    text-align: center;
+}
