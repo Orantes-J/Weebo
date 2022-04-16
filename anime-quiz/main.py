@@ -22,8 +22,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 
 auth = HTTPBasicAuth()
-user = 'juan.carlos@email.com'
-pw = '1234xyz'
+user = 'username here'
+pw = 'password here'
 
 users = {
     user : generate_password_hash(pw)
@@ -80,33 +80,24 @@ class Review(FlaskForm):
 
 weeb_db = mysql.connector.connect(
     host='localhost',
-    user='root',
-    password='root',
-    database='weeb_db'
+    user='db username',
+    password='db password',
+    database='database name here'
 )
 mycursor = weeb_db.cursor()
 mycursor.execute('SHOW TABLES')
-
-db_tables = mycursor.fetchall() #this method grabs all tables. Without it, it will return a NONE TYPE OBJECT 
-# print('*'*50)
-# print(db_tables)
-# print('*'*50)
-# ----------------------------------------------------------------------------------
 
 # ---------------------------------CONNECT DATABASE---------------------------------
 
 weeb_db = mysql.connector.connect(
     host='localhost',
-    user='root',
-    password='root',
-    database='weeb_db'
+    user='db username',
+    password='db password',
+    database='database name'
 )
 mycursor = weeb_db.cursor()
 mycursor.execute('SHOW TABLES')
 db_tables = mycursor.fetchall() #this method grabs all tables. Without it, it will return a NONE TYPE OBJECT 
-# print('*'*50)
-# print(db_tables)
-# print('*'*50)
 
 # ----------------------------------------------------------------------------------
 correct = "✔"
@@ -121,11 +112,11 @@ for a in my_quizzes:
 
 # --------------------------------- MODULE CODE -> FUNCTION CALLS ---------------------------------
 list_of_users = []
-email_carlos = 'carlos@email.com'
+test_email = 'test email'
 user_name = "carlos orantes"
 user_password = "1235"
 user_username = "showboy"
-mycursor.execute(f"SELECT email FROM user_example WHERE email = '{email_carlos}'")
+mycursor.execute(f"SELECT email FROM user_example WHERE email = '{test_email}'")
 fetched_emails = mycursor.fetchall()
 for i in fetched_emails:
     list_of_users.append(i)
@@ -200,7 +191,6 @@ def quiz():
             for a in rr:
                 list_of_questions.append(a)
 
-    
     # APPENDS SLICED LIST INTO NEW ARRAY WHICH ONLY CONTAIN ANSWERS 
     for a in list_of_questions:
         choices = a[2:]
@@ -261,11 +251,8 @@ def quizes():
         sql_values = (recieved_name, recieved_rating, recieved_review)
         mycursor.execute(sql_command, sql_values)
         weeb_db.commit()
-        # print('*'*50)
-        # print(mycursor.rowcount, 'record inserted')
-        # print('*'*50)
 
-        #----------------------------------------------------------------------------
+    # ------------------------------------------------------------------------------
         return redirect(url_for('quizes'))
     return render_template('quizes.html', all_reviews = reviews_list ,all_quizes = anime_quizes, form = review_form)
 
@@ -290,10 +277,6 @@ def submissions():
     
     return render_template('art-submissions.html', arts = art_submissions)
 
-@app.route('/Calei')
-def idk():
-    return render_template('first.html')
-
 @app.route('/submit-art', methods = ["POST", "GET"])
 def submit_art():
     if request.method == "POST":
@@ -317,9 +300,6 @@ def submit_art():
             sql_values = (art_caption, artist_name, artist_link, filename)
             mycursor.execute(sql_command, sql_values)
             weeb_db.commit()
-            print('*'*50)
-            print(mycursor.rowcount, 'record inserted')
-            print('*'*50)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return redirect(url_for('home'))
     return redirect(url_for('home'))    
@@ -364,10 +344,6 @@ def login_post():
         mycursor.execute(f"SELECT * FROM user_example WHERE email = '{email}'")
         current_user = mycursor.fetchall()
 
-        print('*'*50)
-        print(current_user, 'current_user var')
-        print('*'*50)
-
         if not current_user[0][2] or not current_user[0][3]:
             flash("Please check your login details and try again.")
             return redirect(url_for('login'))
@@ -375,10 +351,6 @@ def login_post():
         session['user_id'] = current_user[0][0]
         session_user.append(current_user[0][0])
         session_info.append(session)
-        print(session_info)
-        print('*'*50)
-        print('user session made')
-        print('*'*50)
         return redirect(url_for('home'))
 
     return render_template('login.html')
@@ -398,17 +370,10 @@ def signup_post():
         mycursor.execute(f"SELECT * FROM user_example WHERE email = '{email}' ")
         user_list = mycursor.fetchall()
         news.create_users(user_list, email=email, name=name, password=password, username=username)
-        print('*'*50)
-        print(user_list, "this is user_list")
-        print('*'*50)
         mycursor.execute(f"SELECT * FROM user_example WHERE email = '{email}'")
         new_user_info = mycursor.fetchall()
-        print('*'*50)
-        print(new_user_info, 'this is new user info')
-        print('*'*50)
         for i in new_user_info:
             new_user_session.append(i)
-        print(new_user_session)
         session['user_id'] = user_list[0][0]
         return  redirect(url_for('home'))
     return render_template('signup.html')
